@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fake Website Detector</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0b63b8",
+                        "background-light": "#ffffff",
+                        "background-subtle": "#f8fafc",
+                        "text-main": "#0f172a",
+                        "text-body": "#475569",
+                        "text-muted": "#94a3b8",
+                        "border-light": "#e2e8f0",
+                        "card-light": "#ffffff"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'glow': '0 0 20px rgba(19, 127, 236, 0.15)'
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #137fec; 
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light text-text-main antialiased overflow-x-hidden">
+<div class="relative min-h-screen flex flex-col">
+<header class="w-full border-b border-border-light bg-white/90 backdrop-blur-md sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">shield</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-800">TrustGuard</h1>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden sm:block text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">Documentation</a>
+<button class="bg-primary hover:bg-primary-dark text-white text-sm font-bold px-5 py-2 rounded-lg transition-colors shadow-lg shadow-primary/20">
+                            API Access
+                        </button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col">
+<section class="relative pt-20 pb-16 lg:pt-32 lg:pb-24 px-4 overflow-hidden bg-background-light">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-blue-100/40 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold mb-8 animate-fade-in-up">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                        Live Threat Detection System
+                    </div>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-slate-900">
+                        Verify before you <span class="text-primary">click.</span>
+</h1>
+<p class="text-lg md:text-xl text-text-body mb-10 max-w-2xl mx-auto leading-relaxed">
+                        Instant AI-powered analysis for phishing scams, fraudulent domains, and zero-day threats. Secure your browsing in milliseconds.
+                    </p>
+<div class="relative max-w-2xl mx-auto group">
+<div class="absolute -inset-1 bg-gradient-to-r from-blue-300 to-cyan-300 rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative flex items-center bg-white rounded-xl border border-border-light shadow-xl shadow-slate-200/50 p-2">
+<div class="pl-4 pr-2 text-slate-400">
+<span class="material-symbols-outlined">link</span>
+</div>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-slate-900 placeholder-slate-400 text-base md:text-lg h-12 w-full" placeholder="Paste suspicious URL here (e.g., amazon-security-check.com)..." type="text"/>
+<button class="hidden sm:flex items-center justify-center bg-primary hover:bg-primary-dark text-white px-8 h-12 rounded-lg font-bold transition-all transform hover:scale-[1.02] shadow-md shadow-primary/20">
+                                Analyze
+                            </button>
+<button class="sm:hidden flex items-center justify-center bg-primary hover:bg-primary-dark text-white w-12 h-12 rounded-lg font-bold transition-all">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+<p class="mt-4 text-sm text-slate-500">
+<span class="material-symbols-outlined align-middle text-[16px] mr-1">lock</span>
+                        Your search is private and encrypted.
+                    </p>
+</div>
+</section>
+<section class="py-10 border-y border-border-light bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+<div class="px-4 py-2">
+<div class="text-4xl font-bold text-slate-900 mb-1">1.2M+</div>
+<div class="text-sm font-medium text-primary uppercase tracking-wider">Sites Scanned Today</div>
+</div>
+<div class="px-4 py-2">
+<div class="text-4xl font-bold text-slate-900 mb-1">450K</div>
+<div class="text-sm font-medium text-primary uppercase tracking-wider">Threats Blocked</div>
+</div>
+<div class="px-4 py-2">
+<div class="text-4xl font-bold text-slate-900 mb-1">99.9%</div>
+<div class="text-sm font-medium text-primary uppercase tracking-wider">Accuracy Rate</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-subtle relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold tracking-tight mb-4 text-slate-900">How It Works</h2>
+<p class="text-text-body max-w-2xl mx-auto">
+                            Three simple steps to verify the safety of any website instantly.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+<div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-slate-200 -z-10"></div>
+<div class="flex flex-col items-center text-center group">
+<div class="relative mb-6">
+<div class="w-24 h-24 rounded-full bg-white border border-slate-100 shadow-soft flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
+<span class="material-symbols-outlined text-4xl">add_link</span>
+</div>
+<div class="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-primary text-white border-2 border-white flex items-center justify-center font-bold text-sm shadow-md">1</div>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900">Paste URL</h3>
+<p class="text-text-body leading-relaxed text-sm">
+                                Copy the suspicious link from your email or browser and paste it securely above.
+                            </p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="relative mb-6">
+<div class="w-24 h-24 rounded-full bg-white border border-slate-100 shadow-soft flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
+<span class="material-symbols-outlined text-4xl">smart_toy</span>
+</div>
+<div class="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-primary text-white border-2 border-white flex items-center justify-center font-bold text-sm shadow-md">2</div>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900">AI Analysis</h3>
+<p class="text-text-body leading-relaxed text-sm">
+                                Our engines analyze the domain, SSL status, and code patterns for hidden threats.
+                            </p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="relative mb-6">
+<div class="w-24 h-24 rounded-full bg-white border border-slate-100 shadow-soft flex items-center justify-center text-primary group-hover:border-primary/50 group-hover:shadow-glow transition-all duration-300">
+<span class="material-symbols-outlined text-4xl">verified_user</span>
+</div>
+<div class="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-primary text-white border-2 border-white flex items-center justify-center font-bold text-sm shadow-md">3</div>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900">Get Result</h3>
+<p class="text-text-body leading-relaxed text-sm">
+                                Receive an instant safety score and detailed report on potential risks.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white border-y border-border-light">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="lg:w-1/2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-primary text-xs font-bold mb-6">
+                                Why Choose TrustGuard
+                            </div>
+<h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
+                                Built for speed, <br/>designed for privacy.
+                            </h2>
+<p class="text-lg text-text-body mb-8 leading-relaxed">
+                                We process millions of URLs daily to keep the internet safe. Our infrastructure is built to scale without compromising on user privacy.
+                            </p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">bolt</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 text-lg mb-1">Lightning Fast Analysis</h4>
+<p class="text-slate-600 text-sm">Get comprehensive security reports in under 500ms. We don't slow you down.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">visibility_off</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 text-lg mb-1">Complete Privacy</h4>
+<p class="text-slate-600 text-sm">No logging of submitted URLs linked to personal IP addresses.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">database</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 text-lg mb-1">Largest Threat Database</h4>
+<p class="text-slate-600 text-sm">Continuously updated from 50+ global security feeds.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="lg:w-1/2 relative w-full px-4 md:px-0">
+<div class="absolute -inset-4 bg-gradient-to-r from-primary to-purple-400 rounded-2xl blur-2xl opacity-10 animate-float"></div>
+<div class="relative bg-white border border-border-light rounded-2xl shadow-2xl shadow-slate-200/50 p-6 md:p-8">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div>
+<div class="text-sm text-slate-500">Security Score</div>
+<div class="text-2xl font-bold text-slate-900">100/100 Safe</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+<span class="text-sm font-medium text-slate-700">SSL Certificate</span>
+<span class="text-xs font-bold text-green-700 bg-green-100 px-2 py-1 rounded">Valid</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+<span class="text-sm font-medium text-slate-700">Domain Reputation</span>
+<span class="text-xs font-bold text-green-700 bg-green-100 px-2 py-1 rounded">Clean</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+<span class="text-sm font-medium text-slate-700">Malware Check</span>
+<span class="text-xs font-bold text-green-700 bg-green-100 px-2 py-1 rounded">None Detected</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 lg:py-24 bg-background-subtle">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Advanced Protection Layer</h2>
+<p class="text-text-body max-w-2xl mx-auto">
+                            We combine traditional blacklist checking with next-gen AI heuristics to detect threats that haven't been reported yet.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group relative bg-white rounded-xl p-8 border border-border-light hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+<div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-size: 28px;">radar</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900">Real-time Scanning</h3>
+<p class="text-slate-600 leading-relaxed">
+                                Instant analysis of URL structure, SSL certificates, and page content against millions of known threat signatures.
+                            </p>
+</div>
+<div class="group relative bg-white rounded-xl p-8 border border-border-light hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+<div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-size: 28px;">psychology</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900">AI Pattern Recognition</h3>
+<p class="text-slate-600 leading-relaxed">
+                                Machine learning models specifically trained to detect zero-day phishing attacks and obfuscated malicious code.
+                            </p>
+</div>
+<div class="group relative bg-white rounded-xl p-8 border border-border-light hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+<div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-size: 28px;">group_add</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900">Community Blacklist</h3>
+<p class="text-slate-600 leading-relaxed">
+                                Leveraging real-time data crowdsourced from millions of security researchers and automated honey-pots globally.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<section class="relative h-64 md:h-80 w-full overflow-hidden flex items-center justify-center bg-primary">
+<div class="absolute inset-0 opacity-10 mix-blend-screen" data-alt="Abstract dark world map visualization with glowing connection points representing global security nodes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWnKiBjcgFWvA9MG2oOZrT2tsImnPAjOKXqR0kHxj7WeO9iz2g8MrCi6chK58IIZ465eMYpStaj7QbK2_z-qrjOPs6SWKA7RhEi6yA7OUoojRhm32NhZZDcQnqNm1jKbbjC8zuqsP8ozKmc-ch8Ho6OodRgiUeFOFAg6V_QEa8Qtr8uWlKJ1yazP96_Hx2iKewIbqZCzLbOnUW4EU6ZOowDQ0NHurUCfl9QCzWvTQghuoAwhBGi8coiwCWiMeWirynY5jTrVI2kYY'); background-size: cover; background-position: center;">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-primary-dark opacity-40"></div>
+<div class="relative z-10 text-center px-4">
+<h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Trusted by security teams worldwide</h2>
+<div class="flex justify-center gap-8 text-white/90">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">verified</span>
+<span class="font-bold">SecurCorp</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-bold">GuardNet</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-bold">SafeWeb</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-white border-t border-border-light">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">shield</span>
+<span class="text-slate-500 text-sm">© 2023 TrustGuard Inc. All rights reserved.</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">API Documentation</a>
+<a class="text-sm text-slate-500 hover:text-primary transition-colors" href="#">Report False Positive</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
